@@ -1,5 +1,5 @@
 import { axiosInstance } from "../../api/axiosInstance";
-import { BookResponse, BookRequest } from "./types";
+import { BookResponse, BookRequest } from "./api/book.types";
 
 //// --- (API Layer For Books) --- ////
 //-----------------------------------//

@@ -9,9 +9,9 @@ export const bookService = {
     axiosInstance.post<BookResponse>("/books", data),
   // Creates a new book entry
 
-  patchBook: (id: string, data: Partial<BookRequest>) =>
-    axiosInstance.patch<BookResponse>(`/books/${id}`, data),
-  // Partially updates book details by ID
+  updateBook: (id: string, data: BookRequest) =>
+    axiosInstance.put<BookResponse>(`/books/${id}`, data),
+  // Updates book details by ID
 
   deleteBook: (id: string) => axiosInstance.delete<void>(`/books/${id}`),
   // Removes a book entry by ID

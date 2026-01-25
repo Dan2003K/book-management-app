@@ -1,5 +1,5 @@
 import { bookService } from "../api/books.api";
-import { BookResponse } from "../book.types";
+import { BookResponse, BookRequest } from "../book.types";
 import { useState, useEffect } from "react";
 
 export function useBooks() {
@@ -21,6 +21,21 @@ export function useBooks() {
     fetchBooks();
   }, []);
 
+  const createBook = async (data: Omit<BookRequest, "isFavorite">) => {
+    try {
+      const newBook: BookResponse = {
+        id: crypto.randomUUID(),
+        ...data,
+        isFavorite: false,
+      };
+
+      const res = await bookService.createBook(newBook);
+      setBooks((prev) => [...prev, res.data]);
+    } catch (err) {
+      console.error("failed to create book", err);
+    }
+  };
+
   const updateBook = async (updated: BookResponse) => {
     try {
       const { id, ...data } = updated;
@@ -40,5 +55,5 @@ export function useBooks() {
     }
   };
 
-  return { books, loading, updateBook, removeBook };
+  return { books, loading, createBook, updateBook, removeBook };
 }

@@ -68,7 +68,7 @@ export default function App() {
           />
         </span>
         <Button
-          className="gap-2 font-bold"
+          className="gap-2 font-bold select-none"
           color="green"
           onClick={openCreateModal}
         >

@@ -64,7 +64,7 @@ export default function App() {
           <SearchBar
             value={query}
             onChange={setQuery}
-            placeholder="Search for book..."
+            placeholder="Search book by title, author or description..."
           />
         </span>
         <Button

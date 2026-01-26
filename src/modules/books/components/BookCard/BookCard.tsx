@@ -23,7 +23,7 @@ export function BookCard({ book, onLike, onEdit, onDelete }: BookCardProps) {
 
   return (
     <>
-      <Card className="text-gray-500">
+      <Card className="text-gray-500 transition-all duration-250 ease-out hover:scale-102">
         <img
           src={book.coverImage}
           alt={book.title}

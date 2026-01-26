@@ -85,7 +85,7 @@ export default function App() {
             <p className="text-xl font-semibold text-gray-400 sm:text-2xl">
               No matches found for:
             </p>
-            <p className="wrap-break-words mt-2 max-w-lg text-2xl font-bold text-white sm:text-3xl">
+            <p className="mt-2 max-w-100 text-2xl font-bold wrap-anywhere text-white sm:text-3xl">
               "{query}"
             </p>
           </div>

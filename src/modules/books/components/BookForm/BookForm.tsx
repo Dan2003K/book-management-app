@@ -33,7 +33,6 @@ export function BookForm({ initialData, onSubmit }: BookFormProps) {
           required
         />
         <Select value={rate} onChange={(e) => setRate(e.target.value)} required>
-          <option value={"?"}>No Rate</option>
           <option value={10}>10</option>
           <option value={9}>09</option>
           <option value={8}>08</option>
@@ -44,6 +43,7 @@ export function BookForm({ initialData, onSubmit }: BookFormProps) {
           <option value={3}>03</option>
           <option value={2}>02</option>
           <option value={1}>01</option>
+          <option value={"?"}>No Rate</option>
         </Select>
       </span>
       <TextInput

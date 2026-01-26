@@ -79,7 +79,7 @@ export default function App() {
 
       {/* --- No Results --- */}
       {noResults ? (
-        <div className="flex flex-1 flex-col items-center justify-center gap-2 px-4 select-none">
+        <div className="justify-top mt-50 flex flex-1 flex-col items-center gap-2 px-4 select-none">
           <SearchX className="mb-4 h-16 w-16 text-gray-600 sm:h-20 sm:w-20" />
           <div className="text-center">
             <p className="text-xl font-semibold text-gray-400 sm:text-2xl">

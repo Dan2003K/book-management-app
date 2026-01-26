@@ -8,9 +8,9 @@ export function useBookSearch(books: BookResponse[]) {
     const q = query.trim().toLowerCase();
 
     return books.filter((book) =>
-      Object.values(book).some((value) =>
-        String(value).toLowerCase().includes(q),
-      ),
+      [book.title, book.author, book.description]
+        .filter(Boolean)
+        .some((value) => value!.toLowerCase().includes(q)),
     );
   }, [books, query]);
 

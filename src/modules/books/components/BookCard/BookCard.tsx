@@ -23,7 +23,7 @@ export function BookCard({ book, onLike, onEdit, onDelete }: BookCardProps) {
 
   return (
     <>
-      <Card className="text-gray-500 transition-all duration-250 ease-out hover:scale-102">
+      <Card className="min-w-75 text-gray-500 transition-all duration-250 ease-out hover:scale-102">
         <img
           src={book.coverImage}
           alt={book.title}
@@ -31,10 +31,10 @@ export function BookCard({ book, onLike, onEdit, onDelete }: BookCardProps) {
         />
         <span className="flex justify-between">
           <h1 className="text-xl font-bold">{book.title}</h1>
-          <span className="flex items-center gap-2 select-none">
-            {book.rate} / 10
-            <Star fill="gray" color="gray" size={14} />
-          </span>
+          <div className="ml-2 flex flex-wrap-reverse items-center justify-end select-none">
+            <div className="whitespace-nowrap">{book.rate} / 10</div>
+            <Star className="ml-2" fill="gray" color="gray" size={14} />
+          </div>
         </span>
         <p>{book.author}</p>
         <p className="grow">{book.description}</p>

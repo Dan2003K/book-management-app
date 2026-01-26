@@ -1,4 +1,4 @@
-import { Button, TextInput, Textarea } from "flowbite-react";
+import { Button, TextInput, Textarea, Select } from "flowbite-react";
 import { useState } from "react";
 import type { BookRequest } from "../../book.types";
 import { Save } from "lucide-react";
@@ -11,6 +11,7 @@ type BookFormProps = {
 export function BookForm({ initialData, onSubmit }: BookFormProps) {
   const [title, setTitle] = useState(initialData?.title ?? "");
   const [author, setAuthor] = useState(initialData?.author ?? "");
+  const [rate, setRate] = useState(initialData?.rate ?? "?");
   const [description, setDescription] = useState(
     initialData?.description ?? "",
   );
@@ -18,17 +19,33 @@ export function BookForm({ initialData, onSubmit }: BookFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit({ title, author, description, coverImage });
+    onSubmit({ title, author, description, rate, coverImage });
   };
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
-      <TextInput
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Book title"
-        required
-      />
+      <span className="flex gap-2">
+        <TextInput
+          className="grow"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Book title"
+          required
+        />
+        <Select value={rate} onChange={(e) => setRate(e.target.value)} required>
+          <option value={"?"}>No Rate</option>
+          <option value={10}>10</option>
+          <option value={9}>09</option>
+          <option value={8}>08</option>
+          <option value={7}>07</option>
+          <option value={6}>06</option>
+          <option value={5}>05</option>
+          <option value={4}>04</option>
+          <option value={3}>03</option>
+          <option value={2}>02</option>
+          <option value={1}>01</option>
+        </Select>
+      </span>
       <TextInput
         value={author}
         onChange={(e) => setAuthor(e.target.value)}

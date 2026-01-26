@@ -1,4 +1,4 @@
-import { Heart, Pencil, Trash2 } from "lucide-react";
+import { Heart, Pencil, Trash2, Star } from "lucide-react";
 import type { BookCardProps } from "./BookCard.types";
 import { Card, Button } from "flowbite-react";
 import { useState, useEffect } from "react";
@@ -27,9 +27,15 @@ export function BookCard({ book, onLike, onEdit, onDelete }: BookCardProps) {
         <img
           src={book.coverImage}
           alt={book.title}
-          className="h-48 w-full rounded-md border border-gray-700 object-cover text-center text-gray-500"
+          className="h-48 w-full rounded-md border border-gray-700 object-cover text-center text-gray-500 select-none"
         />
-        <h1 className="text-xl font-bold">{book.title}</h1>
+        <span className="flex justify-between">
+          <h1 className="text-xl font-bold">{book.title}</h1>
+          <span className="flex items-center gap-2 select-none">
+            {book.rate} / 10
+            <Star fill="gray" color="gray" size={14} />
+          </span>
+        </span>
         <p>{book.author}</p>
         <p className="grow">{book.description}</p>
 

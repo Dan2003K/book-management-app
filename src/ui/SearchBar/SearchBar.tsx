@@ -5,6 +5,7 @@ export function SearchBar({ value, onChange, placeholder }: SearchBarProps) {
   return (
     <div className="relative w-full">
       <TextInput
+        className="select-none"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder ?? "Search..."}

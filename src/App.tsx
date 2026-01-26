@@ -57,7 +57,7 @@ export default function App() {
     );
 
   return (
-    <div className="flex min-h-screen flex-col gap-5 px-10 pb-10">
+    <div className="flex min-h-screen min-w-100 flex-col gap-5 px-10 pb-10">
       {/* --- Top Bar --- */}
       <div className="sticky top-0 z-10 flex flex-row gap-2 bg-gray-800 py-5">
         <span className="grow">

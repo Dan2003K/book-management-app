@@ -73,7 +73,7 @@ export default function App() {
           onClick={openCreateModal}
         >
           <BookPlus />
-          Create Book
+          <span className="hidden sm:inline">Create Book</span>
         </Button>
       </div>
 

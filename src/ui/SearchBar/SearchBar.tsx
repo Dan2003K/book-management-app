@@ -5,7 +5,7 @@ export function SearchBar({ value, onChange, placeholder }: SearchBarProps) {
   return (
     <div className="relative w-full">
       <TextInput
-        className="select-none"
+        className="select-none [&_input]:border-gray-600 [&_input]:bg-gray-700 [&_input]:text-white"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder ?? "Search..."}
@@ -17,7 +17,7 @@ export function SearchBar({ value, onChange, placeholder }: SearchBarProps) {
           onClick={() => onChange("")}
         >
           <div color="gray" className="flex h-full bg-gray-700 px-4 py-2">
-            <span className="text-xs">CLEAR</span>
+            <span className="var(--bg-surface) text-xs">CLEAR</span>
           </div>
         </button>
       )}

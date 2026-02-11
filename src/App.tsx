@@ -5,12 +5,11 @@ import { useBooks } from "./modules/books/hooks/useBooks";
 import { useBookSearch } from "./modules/books/hooks/useBookSearch";
 import { Button } from "flowbite-react";
 import { SearchX, BookPlus, Eraser } from "lucide-react";
-
+import type { BookResponse } from "./modules/books/book.types";
 import {
   BookModalManager,
   type BookModalState,
 } from "./modules/books/components/modals/BookModalManager";
-import type { BookResponse } from "./modules/books/book.types";
 
 export default function App() {
   const { books, loading, createBook, updateBook, removeBook } = useBooks();

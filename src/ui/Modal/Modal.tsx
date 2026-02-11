@@ -10,8 +10,8 @@ type ModalProps = {
 export function Modal({ open, title, onClose, children }: ModalProps) {
   return (
     <FlowbiteModal show={open} onClose={onClose}>
-      <ModalHeader>{title}</ModalHeader>
-      <ModalBody>{children}</ModalBody>
+      <ModalHeader className="bg-gray-800">{title}</ModalHeader>
+      <ModalBody className="bg-gray-800">{children}</ModalBody>
     </FlowbiteModal>
   );
 }

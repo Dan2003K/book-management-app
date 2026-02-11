@@ -56,13 +56,14 @@ export function BookForm({ initialData, onSubmit }: BookFormProps) {
         className="h-50 max-h-75 min-h-25"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        placeholder="Description"
-        required
+        placeholder="Description (optional)"
+        required={false}
       />
       <TextInput
         value={coverImage}
         onChange={(e) => setCoverImage(e.target.value)}
-        placeholder="Cover image URL (optional)"
+        placeholder="Cover image URL"
+        required={true}
       />
       <Button className="gap-2" type="submit">
         <Save />
